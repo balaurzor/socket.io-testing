@@ -5,7 +5,7 @@
   "scripts": {
     "dependencies": "rimraf node_modules & npm install & npm install -g nodemon",
     "clean": "rimraf dist",
-    "start": "npm run clean & tsc & copy index.html dist\\client & npm-run-all --parallel watch:build watch:server watch:client --print-label",
+    "start": "npm run clean & tsc & copy src\\client\\index.html dist\\client & npm-run-all --parallel watch:build watch:server watch:client --print-label",
     "watch:build": "tsc --watch",
     "watch:client": "nodemon dist/client/index.js",
     "watch:server": "nodemon dist/server/server.js"
