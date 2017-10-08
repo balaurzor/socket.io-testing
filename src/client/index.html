@@ -7,6 +7,8 @@
 </head>
 
 <body>
+    <div id="accounts"></div>
+
     <script src="http://localhost:3300/socket.io/socket.io.js"></script>
     <script type="text/javascript">
         var socket = io.connect('http://localhost:3300');
@@ -15,7 +17,9 @@
         socket.emit('getAccounts', { token : '1v36b42c79421' } );
 
         function onGetAccounts(accounts) {
-            console.log('got', accounts)
+            var holder = document.getElementById('accounts');
+
+            holder.innerHTML += '<div>Got account ' + accounts.account.id + ' on currency ' + accounts.currency.isoName + ' from bank ' + accounts.account.bankName + '</div>';
         }
     </script>
 </body>

@@ -3,8 +3,6 @@ const client_http = require('http').Server(client_app);
 const path = require('path');
 const client_port =  3000;
 
-let connection;
-
 client_app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/index.html'));
 });
