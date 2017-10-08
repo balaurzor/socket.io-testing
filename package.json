@@ -1,0 +1,23 @@
+{
+  "name": "streaming",
+  "version": "0.0.1",
+  "description": "Testing data streams",
+  "scripts": {
+    "dependencies": "rimraf node_modules & npm install & npm install -g nodemon",
+    "clean": "rimraf dist",
+    "start": "npm run clean & tsc & copy index.html dist\\client & npm-run-all --parallel watch:build watch:server watch:client --print-label",
+    "watch:build": "tsc --watch",
+    "watch:client": "nodemon dist/client/index.js",
+    "watch:server": "nodemon dist/server/server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.1",
+    "npm-run-all": "^4.1.1",
+    "rimraf": "^2.6.2",
+    "socket.io": "^2.0.3",
+    "typescript": "^2.5.3"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.33"
+  }
+}
